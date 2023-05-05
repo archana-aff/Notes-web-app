@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taking App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Note Taking App</h1>
+    </header>
+    <main>
+      <section id="notes">
+        <h2>All Notes</h2>
+        <ul id="note-list">
+          <!-- Saved notes will be displayed here -->
+        </ul>
+      </section>
+      <section id="note-form">
+        <h2>New Note</h2>
+        <form>
+          <label for="note-title">Title:</label>
+          <input type="text" id="note-title" name="note-title" required>
+          <label for="note-body">Body:</label>
+          <textarea id="note-body" name="note-body" required></textarea>
+          <button type="submit">Save Note</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <input type="text" id="search" placeholder="Search notes...">
+      </footer> <br> <center> Afforal, made by Archana.D.Naik</center>    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
