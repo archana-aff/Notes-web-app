@@ -30,18 +30,33 @@ function displayNotes() {
     const title = document.createElement('h3');
     const body = document.createElement('p');
     const deleteButton = document.createElement('button');
+    const editButton = document.createElement('button');
+    
     title.textContent = note.title;
     body.textContent = note.body;
     deleteButton.textContent = 'Delete';
+    editButton.textContent = 'Edit';
+  
     deleteButton.addEventListener('click', () => {
       notes.splice(index, 1);
       localStorage.setItem('notes', JSON.stringify(notes));
       displayNotes();
     });
+
+    editButton.addEventListener('click', () => {
+      const newTitle = prompt('Enter new title:', note.title);
+      const newBody = prompt('Enter new body:', note.body);
+      const updatedNote = { title: newTitle, body: newBody };
+      const updatedNotes = notes.map((n, i) => i === index ? updatedNote : n);
+      localStorage.setItem('notes', JSON.stringify(updatedNotes));
+      displayNotes();
+    });
+
     li  
     .appendChild(title);
     li.appendChild(body);
     li.appendChild(deleteButton);
+    li.appendChild(editButton);
     noteList.appendChild(li);
   });
 }
